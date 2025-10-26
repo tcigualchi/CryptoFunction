@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades - História da Criptografia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/curiosities.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon"><i class='bx  bx-book'  ></i> </i> </div>
+                    <div class="logo-text">
+                        <h1>Curiosidades</h1>
+                        <span class="subtitle">História da Criptografia</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="/" class="nav-link">
+                        <i class='bx bx-home'></i>
+                        Voltar ao App
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="curiosities-container">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <h1><i class='bx  bx-brain'  ></i> A Fascinante História da Criptografia</h1>
+                    <p>Descubra os segredos, histórias e curiosidades por trás da arte de esconder informações</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-number">2.000+</span>
+                            <span class="stat-label">Anos de História</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Algoritmos Clássicos</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Segredos para Descobrir</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Timeline -->
+                <section class="timeline-section">
+                    <h2><i class='bx  bx-hourglass'  ></i>  Linha do Tempo da Criptografia</h2>
+                    
+                    <div class="timeline">
+                        <!-- Cifra de César -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><i class='bx bx-crown'></i></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Cifra de César</h3>
+                                    <span class="timeline-date">100-44 a.C.</span>
+                                </div>
+                                
+                                <div class="algorithm-details">
+                                    <div class="detail-card">
+                                        <h4>📖 Como Funciona</h4>
+                                        <p>Cada letra do alfabeto é deslocada um número fixo de posições. Com chave 3:</p>
+                                        <div class="example-box">
+                                            <code>A → D, B → E, C → F, ..., Z → C</code>
+                                        </div>
+                                        <p class="tech-note">É uma <strong>cifra de substituição monoalfabética</strong> - sempre a mesma transformação.</p>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4>🎯 Como Quebrar</h4>
+                                        <p>Super simples! Basta testar as 25 chaves possíveis ou usar análise de frequência.</p>
+                                        <div class="fun-fact">
+                                            <strong>💡 Sabia que?</strong> Em português, as letras mais comuns são A, E, O. Se você vir muitas letras repetidas, provavelmente são essas!
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4>📜 História Curiosa</h4>
+                                        <p>Júlio César realmente usava isso nas suas campanhas militares! Ele enviava mensagens com deslocamento de 3 posições para seus generais.</p>
+                                        <p>Os romanos chamavam isso de <em>"escrito em caráter de César"</em>. Na época, a maioria das pessoas era analfabeta, então só o fato de escrever já era uma forma de criptografia! 🤫</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cifra de Substituição -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><i class='bx bx-shuffle'></i></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Cifra de Substituição</h3>
+                                    <span class="timeline-date">Século XV</span>
+                                </div>
+                                
+                                <div class="algorithm-details">
+                                    <div class="detail-card">
+                                        <h4>📖 Como Funciona</h4>
+                                        <p>Cada letra é mapeada para outra letra de forma aleatória, criando um "alfabeto secreto":</p>
+                                        <div class="example-box">
+                                            <code>A → X, B → M, C → P, D → T, ...</code>
+                                        </div>
+                                        <p>Assim, "BANANA" poderia virar "MXPXPX" - bem mais seguro que César!</p>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4>🎯 Como Quebrar</h4>
+                                        <p>Mais difícil, mas ainda vulnerável. Os métodos incluem:</p>
+                                        <ul class="break-list">
+                                            <li>📊 Análise de frequência de letras</li>
+                                            <li>🔍 Identificação de palavras comuns</li>
+                                            <li>✍️ Padrões de letras duplas</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4>📜 História Curiosa</h4>
+                                        <p>Essa cifra era a favorita de reis e diplomatas durante a Renascença. Mary, Rainha da Escócia, usou uma cifra de substituição em suas cartas... e isso custou a vida dela! 😬</p>
+                                        <p>Suas cartas foram interceptadas e decifradas, provando que ela conspirava contra a rainha Elizabeth I. Um erro criptográfico que mudou a história!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cifra de Transposição -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><i class='bx bx-transfer-alt'></i></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Cifra de Transposição</h3>
+                                    <span class="timeline-date">Séculos XVI-XVII</span>
+                                </div>
+                                
+                                <div class="algorithm-details">
+                                    <div class="detail-card">
+                                        <h4><i class='bx bx-book'></i> Como Funciona</h4>
+                                        <p>Em vez de trocar letras, apenas muda-se sua ordem, como embaralhar cartas:</p>
+                                        <div class="example-box">
+                                            <div>Texto: <code>CRIPTOGRAFIA</code></div>
+                                            <div>Matriz 4x3: 
+                                                <div class="matrix">
+                                                    <div>C R I P</div>
+                                                    <div>T O G R</div>
+                                                    <div>A F I A</div>
+                                                </div>
+                                            </div>
+                                            <div>Lendo por colunas: <code>CTAROFGPRIIA</code></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4><i class='bx bx-target-lock'></i> Como Quebrar</h4>
+                                        <p>Teste diferentes tamanhos de colunas e analise padrões linguísticos.</p>
+                                        <div class="fun-fact">
+                                            <strong><i class='bx bx-bulb'></i> Dica Pro:</strong> Se você vir muitas vogais juntas, provavelmente achou a combinação certa!
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4><i class='bx bx-history'></i> História Curiosa</h4>
+                                        <p>Os espartanos na Grécia Antiga já usavam transposição! Eles escreviam em uma fita enrolada em um bastão - só quem tinha um bastão do mesmo tamanho conseguia ler a mensagem.</p>
+                                        <p>Na Guerra Civil Americana, ambos os lados usavam cifras de transposição. Às vezes, os mensageiros carregavam a chave no bolso... e quando eram capturados, a chave também! 🎒</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Era Moderna -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><i class='bx  bx-laptop' ></i> </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Era Digital</h3>
+                                    <span class="timeline-date">Século XX - Atual</span>
+                                </div>
+                                
+                                <div class="algorithm-details">
+                                    <div class="detail-card">
+                                        <h4>🚀 Evolução Tecnológica</h4>
+                                        <p>Das cifras clássicas aos algoritmos modernos:</p>
+                                        <div class="evolution-grid">
+                                            <div class="evolution-item">
+                                                <h5>Máquina Enigma</h5>
+                                                <p>1918 - rotores que criavam substituição polialfabética</p>
+                                            </div>
+                                            <div class="evolution-item">
+                                                <h5>DES (1977)</h5>
+                                                <p>Primeiro padrão comercial - 56 bits</p>
+                                            </div>
+                                            <div class="evolution-item">
+                                                <h5>AES (2001)</h5>
+                                                <p>Padrão atual - 128/192/256 bits</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4>📱 No Seu Dia a Dia</h4>
+                                        <p>Você usa criptografia constantemente:</p>
+                                        <ul class="modern-uses">
+                                            <li>🔐 WhatsApp - criptografia ponta a ponta</li>
+                                            <li>🌐 Internet - HTTPS em sites</li>
+                                            <li>📶 Wi-Fi - WPA2/WPA3</li>
+                                            <li>💳 Cartões - chips criptografados</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="detail-card">
+                                        <h4>🔮 Futuro Quântico</h4>
+                                        <p>Computadores quânticos podem quebrar a criptografia atual, mas a criptografia quântica já está a caminho! É uma corrida eterna entre criar e quebrar códigos. 🏃‍♂️💨</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quiz Section -->
+                <section class="quiz-section">
+                    <h2><i class='bx  bx-book-open'  ></i>  Teste Seu Conhecimento</h2>
+                    <p>Responda o quiz e descubra se você é um expert em criptografia!</p>
+                    
+                    <div class="quiz">
+                        <div class="quiz-question">
+                            <div class="question-header">
+                                <span class="question-number">1</span>
+                                <h3>Com Cifra de César chave 3, como fica "OLA"?</h3>
+                            </div>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-correct="false">
+                                    <span class="option-letter">A</span>
+                                    <span class="option-text">OLC</span>
+                                </button>
+                                <button class="quiz-option" data-correct="true">
+                                    <span class="option-letter">B</span>
+                                    <span class="option-text">ROD</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false">
+                                    <span class="option-letter">C</span>
+                                    <span class="option-text">NKZ</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question">
+                            <div class="question-header">
+                                <span class="question-number">2</span>
+                                <h3>Qual é a principal fraqueza da Cifra de Substituição?</h3>
+                            </div>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-correct="false">
+                                    <span class="option-letter">A</span>
+                                    <span class="option-text">Chaves muito longas</span>
+                                </button>
+                                <button class="quiz-option" data-correct="true">
+                                    <span class="option-letter">B</span>
+                                    <span class="option-text">Análise de frequência</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false">
+                                    <span class="option-letter">C</span>
+                                    <span class="option-text">Velocidade lenta</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question">
+                            <div class="question-header">
+                                <span class="question-number">3</span>
+                                <h3>Quem usou a Cifra de César historicamente?</h3>
+                            </div>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-correct="true">
+                                    <span class="option-letter">A</span>
+                                    <span class="option-text">Júlio César</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false">
+                                    <span class="option-letter">B</span>
+                                    <span class="option-text">Napoleão</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false">
+                                    <span class="option-letter">C</span>
+                                    <span class="option-text">Cleópatra</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-result">
+                            <div class="result-content">
+                                <h3 id="quizTitle">Responda todas as perguntas!</h3>
+                                <p id="quizDescription">Clique nas opções para verificar suas respostas</p>
+                                <div class="score" id="quizScore">0/3</div>
+                                <button id="retryQuiz" class="btn btn-primary">
+                                    <i class='bx bx-refresh'></i>
+                                    Tentar Novamente
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <div class="cta-content">
+                        <h2>Pronto para Colocar em Prática?</h2>
+                        <p>Volte ao aplicativo e experimente esses algoritmos você mesmo!</p>
+                        <a href="/" class="btn btn-primary btn-large">
+                            <i class='bx bx-play-circle'></i>
+                            Usar Ferramenta de Criptografia
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 CryptoLab - Projeto Acadêmico de Segurança Digital</p>
+                <div class="footer-links">
+                    <span>Descubra mais segredos da criptografia</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/curiosities.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoFunction - Ferramenta de Criptografia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon"><i class='bx bx-lock-alt'></i></div>
+                    <div class="logo-text">
+                        <h1>CryptoFunction</h1>
+                        <span class="subtitle">Ferramenta de Criptografia</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="/" class="nav-link active">
+                        <i class='bx bx-home'></i>
+                        Ferramenta
+                    </a>
+                    <a href="/curiosidades" class="nav-link">
+                        <i class='bx bx-book'></i>
+                        Curiosidades
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-grid">
+                <!-- Painel de Controle -->
+                <section class="control-panel">
+                    <div class="panel-header">
+                        <h2><i class='bx bx-cog'></i> Configurações</h2>
+                        <p>Configure como quer criptografar</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="algorithm" class="form-label">
+                            <i class='bx bx-shield-quarter'></i>
+                            Algoritmo
+                        </label>
+                        <select id="algorithm" class="form-select">
+                            <option value="cesar">Cifra de César</option>
+                            <option value="substitution">Cifra de Substituição</option>
+                            <option value="transposition">Cifra de Transposição</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="keyGroup">
+                        <label for="key" class="form-label">
+                            <i class='bx bx-key'></i>
+                            Chave (César)
+                        </label>
+                        <div class="key-controls">
+                            <input type="number" id="key" class="key-input" value="3" min="1" max="25">
+                            <div class="key-buttons">
+                                <button type="button" class="key-btn" data-action="decrease">
+                                    <i class='bx bx-minus'></i>
+                                </button>
+                                <button type="button" class="key-btn" data-action="increase">
+                                    <i class='bx bx-plus'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class='bx bx-transfer-alt'></i>
+                            Operação
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="operation" value="encrypt" checked>
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">
+                                    <i class='bx bx-lock'></i>
+                                    Criptografar
+                                </span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="operation" value="decrypt">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">
+                                    <i class='bx bx-lock-open'></i>
+                                    Descriptografar
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="processBtn" class="btn btn-primary">
+                            <i class='bx bx-play-circle'></i>
+                            Processar Texto
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary">
+                            <i class='bx bx-trash'></i>
+                            Limpar Tudo
+                        </button>
+                        <button id="newKeysBtn" class="btn btn-outline">
+                            <i class='bx bx-refresh'></i>
+                            Novas Chaves
+                        </button>
+                    </div>
+
+                    <div class="tips">
+                        <h3><i class='bx bx-bulb'></i> Dica Rápida</h3>
+                        <p>Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para processar mais rápido!</p>
+                    </div>
+                </section>
+
+                <!-- Área de Texto -->
+                <section class="text-area-section">
+                    <div class="text-panel">
+                        <div class="panel-header">
+                            <h3><i class='bx bx-edit-alt'></i> Texto Original</h3>
+                            <div class="text-info">
+                                <span id="inputCount">0</span> caracteres
+                            </div>
+                        </div>
+                        <textarea 
+                            id="inputText" 
+                            placeholder="Digite aqui o texto que você quer criptografar ou descriptografar..."
+                            class="text-area"
+                        >Olá, mundo! Este é um exemplo de texto para testar a criptografia.</textarea>
+                    </div>
+
+                    <div class="text-panel">
+                        <div class="panel-header">
+                            <h3><i class='bx bx-show-alt'></i> Resultado</h3>
+                            <div class="text-info">
+                                <span id="outputCount">0</span> caracteres
+                            </div>
+                        </div>
+                        <textarea 
+                            id="outputText" 
+                            placeholder="O resultado aparecerá aqui..."
+                            class="text-area"
+                            readonly
+                        ></textarea>
+                    </div>
+                </section>
+
+                <!-- Painel de Informações -->
+                <section class="info-panel">
+                    <div class="info-card">
+                        <h3><i class='bx bx-stats'></i> Estatísticas</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value" id="processingTime">0ms</span>
+                                <span class="stat-label">Tempo</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="algorithmUsed">-</span>
+                                <span class="stat-label">Algoritmo</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="successRate">100%</span>
+                                <span class="stat-label">Sucesso</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class='bx bx-info-circle'></i> Sobre os Algoritmos</h3>
+                        <div class="algorithm-info">
+                            <p><strong>Cifra de César:</strong> Deslocamento simples de letras</p>
+                            <p><strong>Substituição:</strong> Cada letra vira outra diferente</p>
+                            <p><strong>Transposição:</strong> Bagunça a ordem das letras</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card cta-card">
+                        <h3><i class='bx  bx-book'  ></i>  Quer Saber Mais?</h3>
+                        <p>Descubra a história fascinante por trás desses algoritmos</p>
+                        <a href="/curiosidades" class="btn btn-primary btn-small">
+                            <i class='bx bx-book'></i>
+                            Ver Curiosidades
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 CryptoLab - Projeto Acadêmico de Segurança Digital</p>
+                <div class="footer-links">
+                    <span>Desenvolvido com Flask & Python</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <span class="loading-text">Processando...</span>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
