@@ -22,7 +22,7 @@ O **CryptoFunction** é uma ferramenta educacional desenvolvida como parte de um
 ### 🎯 Objetivos
 
 - 🔐 **Educar** sobre fundamentos de segurança digital
-- 🧪 **Demonstrar** algoritmos clássicos de criptografia  
+- 🧪 **Demonstrar** algoritmos clássicos de criptografia
 - 🎮 **Proporcionar** experiência prática com criptografia
 - 📚 **Divulgar** a história e evolução da criptografia
 
@@ -100,19 +100,19 @@ O **CryptoFunction** é uma ferramenta educacional desenvolvida como parte de um
    ```
 
 ### 📁 Estrutura do Projeto
-```
+```text
 CryptoFunction/
-├── app.py                 # Aplicação Flask principal
-├── requirements.txt       # Dependências do projeto
+├── app.py                  # Aplicação Flask principal
+├── requirements.txt        # Dependências do projeto
 ├── static/
 │   ├── css/
-│   │   └── style.css     # Estilos principais
+│   │   └── style.css       # Estilos principais
 │   └── js/
-│       ├── app.js        # JavaScript da ferramenta
-│       └── curiosities.js # JavaScript das curiosidades
+│       ├── app.js          # JavaScript da ferramenta
+│       └── curiosities.js  # JavaScript das curiosidades
 └── templates/
-    ├── index.html        # Página principal (ferramenta)
-    └── curiosities.html  # Página de curiosidades
+    ├── index.html          # Página principal (ferramenta)
+    └── curiosities.html    # Página de curiosidades
 ```
 
 ## 💡 Como Usar
@@ -152,6 +152,7 @@ CryptoFunction/
 ## 🌐 API Endpoints
 
 ### `POST /api/encrypt`
+
 Processa texto usando os algoritmos de criptografia.
 
 **Body:**
@@ -175,11 +176,13 @@ Processa texto usando os algoritmos de criptografia.
 ```
 
 ### `POST /api/generate-new-keys`
+
 Gera novos mapeamentos para a cifra de substituição.
 
 ## 🎨 Personalização
 
 ### Cores e Tema
+
 O tema pode ser personalizado modificando as variáveis CSS em `static/css/style.css`:
 
 ```css
@@ -192,13 +195,14 @@ O tema pode ser personalizado modificando as variáveis CSS em `static/css/style
 ```
 
 ### Adicionando Novos Algoritmos
+
 1. Implemente o algoritmo em `app.py` na classe `CriptografiaService`
 2. Adicione a opção no select do HTML
 3. Atualize a lógica JavaScript em `static/js/app.js`
 
 ## 🤝 Contribuindo
 
-Contribuições são bem-vindas! Siga estos passos:
+Contribuições são bem-vindas! Siga estes passos:
 
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
@@ -207,7 +211,9 @@ Contribuições são bem-vindas! Siga estos passos:
 5. Abra um Pull Request
 
 ### 🐛 Reportando Problemas
+
 Encontrou um bug? [Abra uma issue](https://github.com/tcigualchi/CryptoFunction/issues) com:
+
 - Descrição detalhada do problema
 - Passos para reproduzir
 - Comportamento esperado vs. atual
@@ -227,6 +233,17 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 
 Desenvolvido como parte do projeto **APS - Atividades Práticas Supervisionadas** do curso de Ciência da Computação.
 
+### 👨‍💻 Desenvolvimento
+
+**João Victor Gualchi**  
+GitHub: [@tcigualchi](https://github.com/tcigualchi)
+
+### 🤝 Colaboração
+
+Agradecimentos ao meu amigo **Takeshi**, que também contribuiu e ajudou no desenvolvimento deste projeto.
+
+GitHub: [@paulooka2007](https://github.com/paulooka2007)
+
 **Desenvolvido com ❤️ para a comunidade acadêmica**
 
 ---
@@ -235,6 +252,6 @@ Desenvolvido como parte do projeto **APS - Atividades Práticas Supervisionadas*
 
 **⭐️ Não se esqueça de dar uma estrela no repositório se este projeto foi útil para você!**
 
-[⬆ Voltar ao topo](#-CryptoFunction---ferramenta-didática-de-criptografia)
+[⬆ Voltar ao topo](#-cryptofunction---ferramenta-didática-de-criptografia)
 
 </div>
